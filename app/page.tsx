@@ -1275,7 +1275,7 @@ export default function Portfolio() {
       <footer className="py-8 bg-black/80 border-t border-cyan-500/20 relative z-20">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60" style={{ textShadow: "0 0 5px rgba(255, 255, 255, 0.2)" }}>
-            © 2024 Alan Sultan. Built with passion and modern web technologies.
+            © 2025 Alan Sultan. Built with passion and modern web technologies.
           </p>
         </div>
       </footer>
