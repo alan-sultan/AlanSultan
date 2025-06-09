@@ -15,7 +15,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "experience", "education", "skills", "projects", "contact"]
+      const sections = ["hero", "about", "experience", "education", "skills", "achievements", "projects", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -125,7 +125,7 @@ export default function Portfolio() {
               Alan Sultan
             </motion.div>
             <div className="hidden md:flex space-x-8">
-              {["About", "Experience", "Education", "Skills", "Projects", "Contact"].map((item) => (
+              {["About", "Experience", "Education", "Skills", "Achievements", "Projects", "Contact"].map((item) => (
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -787,10 +787,23 @@ export default function Portfolio() {
                   {[
                     { name: "C++", level: 85, color: "from-cyan-400 to-blue-400" },
                     { name: "Java", level: 80, color: "from-orange-400 to-red-400" },
+                    {
+                      name: "Advanced Java Programming",
+                      level: 85,
+                      color: "from-red-400 to-pink-400",
+                      note: "Developed a Multi-Chat System using Advanced Java",
+                    },
                     { name: "Python", level: 90, color: "from-green-400 to-emerald-400" },
+                    { name: "JavaScript/React", level: 82, color: "from-yellow-400 to-orange-400" },
+                    {
+                      name: "PHP",
+                      level: 78,
+                      color: "from-purple-400 to-pink-400",
+                      note: "Built a Travel Booking System using PHP",
+                    },
                     { name: "HTML/CSS", level: 85, color: "from-pink-400 to-purple-400" },
-                    { name: "Data Structures & Algorithms", level: 88, color: "from-yellow-400 to-orange-400" },
-                    { name: "Object-Oriented Programming", level: 85, color: "from-indigo-400 to-purple-400" },
+                    { name: "Data Structures & Algorithms", level: 88, color: "from-indigo-400 to-purple-400" },
+                    { name: "Object-Oriented Programming", level: 85, color: "from-teal-400 to-cyan-400" },
                   ].map((skill, index) => (
                     <motion.div
                       key={skill.name}
@@ -801,7 +814,17 @@ export default function Portfolio() {
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="flex justify-between mb-2">
-                        <span className="font-medium">{skill.name}</span>
+                        <div className="flex flex-col">
+                          <span className="font-medium">{skill.name}</span>
+                          {skill.note && (
+                            <span
+                              className="text-xs text-cyan-300/80 italic"
+                              style={{ textShadow: "0 0 5px rgba(6, 182, 212, 0.4)" }}
+                            >
+                              {skill.note}
+                            </span>
+                          )}
+                        </div>
                         <span className="text-purple-300" style={{ textShadow: "0 0 8px rgba(168, 85, 247, 0.6)" }}>
                           {skill.level}%
                         </span>
@@ -902,6 +925,175 @@ export default function Portfolio() {
                       </motion.div>
                     ))}
                   </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coding Achievements Section */}
+      <section id="achievements" className="py-20 bg-black/60 relative z-20">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+              style={{
+                textShadow: "0 0 30px rgba(34, 197, 94, 0.8)",
+              }}
+            >
+              Coding Achievements
+            </h2>
+            <motion.div
+              className="w-24 h-1 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto mb-8"
+              style={{
+                boxShadow: "0 0 20px rgba(34, 197, 94, 0.8)",
+              }}
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(34, 197, 94, 0.8)",
+                  "0 0 30px rgba(16, 185, 129, 0.8)",
+                  "0 0 20px rgba(34, 197, 94, 0.8)",
+                ],
+              }}
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            />
+            <p
+              className="text-xl text-white/90 max-w-3xl mx-auto"
+              style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.3)" }}
+            >
+              Demonstrated strong problem-solving skills through consistent practice and achievement on competitive
+              programming platforms
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -10 }}
+            >
+              <Card
+                className="bg-gray-900/50 backdrop-blur-xl border-green-500/30 text-white text-center"
+                style={{
+                  boxShadow: "0 0 40px rgba(34, 197, 94, 0.3)",
+                }}
+              >
+                <CardContent className="p-8">
+                  <motion.div
+                    className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style={{
+                      boxShadow: "0 0 30px rgba(34, 197, 94, 0.6)",
+                    }}
+                    animate={{
+                      boxShadow: [
+                        "0 0 30px rgba(34, 197, 94, 0.6)",
+                        "0 0 40px rgba(16, 185, 129, 0.6)",
+                        "0 0 30px rgba(34, 197, 94, 0.6)",
+                      ],
+                    }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                    <Code className="w-10 h-10 text-white" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ textShadow: "0 0 15px rgba(34, 197, 94, 0.8)" }}>
+                    LeetCode
+                  </h3>
+                  <motion.div
+                    className="text-4xl font-bold text-green-300 mb-2"
+                    style={{ textShadow: "0 0 20px rgba(34, 197, 94, 0.8)" }}
+                    animate={{
+                      textShadow: [
+                        "0 0 20px rgba(34, 197, 94, 0.8)",
+                        "0 0 30px rgba(34, 197, 94, 1)",
+                        "0 0 20px rgba(34, 197, 94, 0.8)",
+                      ],
+                    }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                    436+
+                  </motion.div>
+                  <p className="text-white/80 mb-4">Problems Solved</p>
+                  <motion.a
+                    href="https://leetcode.com/u/Ala_kaii/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-green-300 hover:text-green-200 underline"
+                    whileHover={{ scale: 1.05 }}
+                    style={{ textShadow: "0 0 10px rgba(34, 197, 94, 0.6)" }}
+                  >
+                    View Profile
+                  </motion.a>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -10 }}
+            >
+              <Card
+                className="bg-gray-900/50 backdrop-blur-xl border-blue-500/30 text-white text-center"
+                style={{
+                  boxShadow: "0 0 40px rgba(59, 130, 246, 0.3)",
+                }}
+              >
+                <CardContent className="p-8">
+                  <motion.div
+                    className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style={{
+                      boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)",
+                    }}
+                    animate={{
+                      boxShadow: [
+                        "0 0 30px rgba(59, 130, 246, 0.6)",
+                        "0 0 40px rgba(99, 102, 241, 0.6)",
+                        "0 0 30px rgba(59, 130, 246, 0.6)",
+                      ],
+                    }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                    <Code className="w-10 h-10 text-white" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ textShadow: "0 0 15px rgba(59, 130, 246, 0.8)" }}>
+                    Codeforces
+                  </h3>
+                  <motion.div
+                    className="text-4xl font-bold text-blue-300 mb-2"
+                    style={{ textShadow: "0 0 20px rgba(59, 130, 246, 0.8)" }}
+                    animate={{
+                      textShadow: [
+                        "0 0 20px rgba(59, 130, 246, 0.8)",
+                        "0 0 30px rgba(59, 130, 246, 1)",
+                        "0 0 20px rgba(59, 130, 246, 0.8)",
+                      ],
+                    }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                    702+
+                  </motion.div>
+                  <p className="text-white/80 mb-4">Problems Solved</p>
+                  <motion.a
+                    href="https://codeforces.com/profile/Ala_Kaii"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-blue-300 hover:text-blue-200 underline"
+                    whileHover={{ scale: 1.05 }}
+                    style={{ textShadow: "0 0 10px rgba(59, 130, 246, 0.6)" }}
+                  >
+                    View Profile
+                  </motion.a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -1026,7 +1218,7 @@ export default function Portfolio() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -10 }}
             >
@@ -1092,6 +1284,173 @@ export default function Portfolio() {
                       <span>
                         Maintain customer profiles, booking history, and preferences for personalized service and
                         loyalty programs
+                      </span>
+                    </motion.li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -10 }}
+            >
+              <Card
+                className="bg-gray-900/50 backdrop-blur-xl border-red-500/30 text-white h-full"
+                style={{
+                  boxShadow: "0 0 40px rgba(239, 68, 68, 0.3)",
+                }}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-3">
+                    <motion.div
+                      className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center"
+                      style={{
+                        boxShadow: "0 0 20px rgba(239, 68, 68, 0.6)",
+                      }}
+                      animate={{
+                        boxShadow: [
+                          "0 0 20px rgba(239, 68, 68, 0.6)",
+                          "0 0 30px rgba(236, 72, 153, 0.6)",
+                          "0 0 20px rgba(239, 68, 68, 0.6)",
+                        ],
+                      }}
+                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                    >
+                      <FolderOpen className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <CardTitle className="text-xl" style={{ textShadow: "0 0 10px rgba(239, 68, 68, 0.8)" }}>
+                      Multi-Chat System
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-3">
+                    <Badge
+                      className="bg-red-600/20 text-red-300 border-red-500/30"
+                      style={{ boxShadow: "0 0 10px rgba(239, 68, 68, 0.4)" }}
+                    >
+                      Advanced Java
+                    </Badge>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-red-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(239, 68, 68, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                      />
+                      <span>
+                        Real-time messaging system supporting multiple concurrent users with thread-safe communication
+                      </span>
+                    </motion.li>
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-red-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(239, 68, 68, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
+                      />
+                      <span>
+                        Implemented advanced Java features including multithreading, socket programming, and GUI
+                        development
+                      </span>
+                    </motion.li>
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-red-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(239, 68, 68, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+                      />
+                      <span>
+                        Features include user authentication, private messaging, group chats, and message history
+                      </span>
+                    </motion.li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -10 }}
+            >
+              <Card
+                className="bg-gray-900/50 backdrop-blur-xl border-purple-500/30 text-white h-full"
+                style={{
+                  boxShadow: "0 0 40px rgba(147, 51, 234, 0.3)",
+                }}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-3">
+                    <motion.div
+                      className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center"
+                      style={{
+                        boxShadow: "0 0 20px rgba(147, 51, 234, 0.6)",
+                      }}
+                      animate={{
+                        boxShadow: [
+                          "0 0 20px rgba(147, 51, 234, 0.6)",
+                          "0 0 30px rgba(99, 102, 241, 0.6)",
+                          "0 0 20px rgba(147, 51, 234, 0.6)",
+                        ],
+                      }}
+                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                    >
+                      <FolderOpen className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <CardTitle className="text-xl" style={{ textShadow: "0 0 10px rgba(147, 51, 234, 0.8)" }}>
+                      Travel Booking System
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-3">
+                    <Badge
+                      className="bg-purple-600/20 text-purple-300 border-purple-500/30"
+                      style={{ boxShadow: "0 0 10px rgba(147, 51, 234, 0.4)" }}
+                    >
+                      PHP
+                    </Badge>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-purple-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(147, 51, 234, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                      />
+                      <span>
+                        Comprehensive travel booking platform with flight, hotel, and package reservation capabilities
+                      </span>
+                    </motion.li>
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-purple-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(147, 51, 234, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
+                      />
+                      <span>Built with PHP backend, MySQL database integration, and responsive web design</span>
+                    </motion.li>
+                    <motion.li className="flex items-start space-x-3" whileHover={{ x: 5 }}>
+                      <motion.div
+                        className="w-2 h-2 bg-purple-400 rounded-full mt-2"
+                        style={{ boxShadow: "0 0 8px rgba(147, 51, 234, 0.8)" }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+                      />
+                      <span>
+                        Features include user registration, booking management, payment processing, and admin dashboard
                       </span>
                     </motion.li>
                   </ul>
@@ -1275,7 +1634,7 @@ export default function Portfolio() {
       <footer className="py-8 bg-black/80 border-t border-cyan-500/20 relative z-20">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60" style={{ textShadow: "0 0 5px rgba(255, 255, 255, 0.2)" }}>
-            © 2025 Alan Sultan. Built with passion and modern web technologies.
+            © 2024 Alan Sultan. Built with passion and modern web technologies.
           </p>
         </div>
       </footer>
